@@ -113,13 +113,30 @@ filtered(mixArray);
 
 // str.replace(/\W/g, "")
 
-function isPalindromo(str){
-    let newStr = str.replaceAll(" ", "" );
-    let invStr = "";
-    for(let i = (newStr.length - 1); i >= 0 ; i--){
-        invStr+=(newStr.charAt(i));
-    }
-    console.log(newStr == invStr);
+// function isPalindromo(str){
+//     let newStr = str.replaceAll(" ", "" );
+//     let invStr = "";
+//     for(let i = (newStr.length - 1); i >= 0 ; i--){
+//         invStr+=(newStr.charAt(i));
+//     }
+//     console.log(newStr == invStr);
+// }
+// let Input = "i topi non avevano nipoti"
+// isPalindromo(Input)
+
+
+//soluzione di Denis Parise
+console.log("\nEsercizio Extra");
+
+let palindrome = "Ingegno c'era nell'allenare congegni"
+
+function verPal(string) {
+    let re = /[\W_]/g;
+    let lowRegStr = string.toLowerCase().replace(re, '');
+    let reverseStr = lowRegStr.split('').reverse().join(''); 
+    return reverseStr === lowRegStr;
+    
 }
-let Input = "i topi non avevano nipoti"
-isPalindromo(Input)
+console.log(verPal(palindrome));
+
+console.log(palindrome.replace(/\W/g, ""));
